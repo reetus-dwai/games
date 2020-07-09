@@ -2,15 +2,15 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script>
-      var x = window.innerWidth;
-      var y = window.innerHeight;
-    </script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <svg height="y" width="x">
+    <svg height="100" width="100" id="game">
       
     </svg> 
+    <script>
+      document.getElementById('games').width = window.innerWidth;
+      document.getElementById('games').height = window.innerHeight;
+    </script>
   </body>
 </html>
