@@ -16,11 +16,11 @@ function writeField(x, y){
   sizeY = y;
   
   //add x values
-  for(var i = 0; i < x; i++){
+  for(var i = 0; i < y; i++){
     arr.push([]);
     
     //add y values
-    for(var k = 0; k < y; k++){
+    for(var k = 0; k < x; k++){
       arr[i].push(0);
     }
   }
@@ -63,9 +63,12 @@ function legalizeMove(){
   
   //clear player from field
   for(var i = 0; i < sizeX; i++){
+    console.log('loop 1: ' + i);
     for(var j = 0; j < sizeY; j++){
+      console.log('loop 2: ' + j);
       if(field[playerX][playerY] = 1){
         field[playerX][playerY] = 0;
+        console.log('found spot');
       }
     }
   }
@@ -83,7 +86,7 @@ function recolorSquares(){
   }
   
   //player's square
-  document.getElementById(playerY + ' ' + playerX).style.background = '#000000';
+  document.getElementById(playerX + ' ' + playerY).style.background = '#000000';
 }
 function keyBind (event){
   if (event.key == 'ArrowUp'){
