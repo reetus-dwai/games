@@ -32,3 +32,30 @@ function drawField(field, target, newId){
     }
   }
 }
+function keyBind (event){
+  if(document.getElementById('start-menu').style.display == 'none'){
+    //checks for player pressing escape
+    if (event.key == 'Escape'){
+      if (z == true){
+        openSettings();
+        z =  false;
+      }
+      else if (z == false){
+        closeSettings();
+        z =  true;
+      }
+    }
+    //checks for player pressing i
+    if (event.key == 'i'){
+      if (i == true){
+        openInv();
+        i =  false;
+      }
+      else if (i == false){
+        closeInv();
+        i =  true;
+      }
+    }
+  }
+  console.log(event.key);
+}
