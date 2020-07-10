@@ -63,11 +63,10 @@ function legalizeMove(){
   
   //clear player from field
   for(var i = 0; i < sizeX; i++){
-    console.log('loop 1: ' + i);
     for(var j = 0; j < sizeY; j++){
-      console.log('loop 2: ' + j);
-      if(field[playerX][playerY] = 1){
-        field[playerX][playerY] = 0;
+      console.log(i + ': ' + j);
+      if(field[i][j] = 1){
+        field[i][j] = 0;
         console.log('found spot');
       }
     }
@@ -86,7 +85,7 @@ function recolorSquares(){
   }
   
   //player's square
-  document.getElementById(playerX + ' ' + playerY).style.background = '#000000';
+  document.getElementById(playerY + ' ' + playerX).style.background = '#000000';
 }
 function keyBind (event){
   if (event.key == 'ArrowUp'){
