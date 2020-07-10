@@ -16,11 +16,11 @@ function writeField(x, y){
   sizeY = y;
   
   //add x values
-  for(var i = 0; i < y; i++){
+  for(var i = 0; i < x; i++){
     arr.push([]);
     
     //add y values
-    for(var k = 0; k < x; k++){
+    for(var k = 0; k < y; k++){
       arr[i].push(0);
     }
   }
