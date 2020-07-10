@@ -1,3 +1,5 @@
+var playerX = 0;
+var playerY = 0;
 function writeField(x, y){
   let arr = [];
   
@@ -33,28 +35,18 @@ function drawField(field, target, newId){
   }
 }
 function keyBind (event){
-  //checks for player pressing escape
-  if (event.key == 'Escape'){
-    if (z == true){
-      openSettings();
-      z =  false;
-    }
-    else if (z == false){
-      closeSettings();
-      z =  true;
-    }
+  if (event.key == 'ArrowUp'){
+    playerY--;
   }
-  //checks for player pressing i
-  if (event.key == 'i'){
-    if (i == true){
-      openInv();
-      i =  false;
-    }
-    else if (i == false){
-      closeInv();
-      i =  true;
-    }
+  if (event.key == 'ArrowDown'){
+    playerY++;
   }
-  
+  if (event.key == 'ArrowLeft'){
+    playerX--;
+  }
+  if (event.key == 'ArrowRight'){
+    playerX++;
+  }
+  console.log(playerX + ', ' + playerY);
   console.log(event.key);
 }
