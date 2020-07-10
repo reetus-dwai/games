@@ -48,7 +48,7 @@ function recolorSquares(){
   }
   
   //player's square
-  document.getElementById(playerX + ' ' + playerY).style.background = '#000000';
+  document.getElementById(playerY + ' ' + playerX).style.background = '#000000';
 }
 function keyBind (event){
   if (event.key == 'ArrowUp'){
