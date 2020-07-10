@@ -1,7 +1,12 @@
 var playerX = 0;
 var playerY = 0;
+
+var sizeX;
+var sizeY;
 function writeField(x, y){
   let arr = [];
+  sizeX = x;
+  sizeY = y;
   
   //add x values
   for(var i = 0; i < x; i++){
@@ -28,11 +33,22 @@ function drawField(field, target, newId){
     
     for(var k = 0; k <= field[0].length; k++){
       let values = document.createElement('td');
-      values.id = k.toString();
+      values.id = i.toString() + ' ' + k.toString();
       values.style.border = '1px solid black';
       document.getElementById('row' + i.toString()).appendChild(values);
     }
   }
+}
+function recolorSquares(){
+  //clear all squares
+  for(var i = 0; i < sizeX; i++){
+    for(var j = 0; j < sizeY; j++){
+      document.getElementById(i + ' ' + j).style.background = '#ffffff';
+    }
+  }
+  
+  //player's square
+  document.getElementById(playerX + ' ' + playerY).style.background = '#000000';
 }
 function keyBind (event){
   if (event.key == 'ArrowUp'){
@@ -47,6 +63,20 @@ function keyBind (event){
   if (event.key == 'ArrowRight'){
     playerX++;
   }
+  
+  if(playerX > sizeX){
+    playerX = sizeX;
+  }
+  if(playerX < 0){
+    playerX = 0;
+  }
+  if(playerY > sizeY){
+    playerY = sizeY;
+  }
+  if(playerY < 0){
+    playerY = 0;
+  }
   console.log(playerX + ', ' + playerY);
-  console.log(event.key);
+  //console.log(event.key);
+  recolorSquares();
 }
