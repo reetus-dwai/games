@@ -18,17 +18,16 @@ function drawField(field, target, newId){
   table.id = newId;
   document.getElementById(target).appendChild(table);
   
-  let rows = document.createElement('tr');
-  //let rowNum = 0;
-  let values = document.createElement('td');
-  //let valueNum = 0;
-  values.style.border = '1px solid black';
   
   for(var i = 0; i <= field.length; i++){
-    rows.id = i.toString();
+    let rows = document.createElement('tr');
+    rows.id = 'row' + i.toString();
     document.getElementById(newId).appendChild(rows);
     
     for(var k = 0; k <= field[0].length; k++){
+      let values = document.createElement('td');
+      values.id = k.toString();
+      values.style.border = '1px solid black';
       document.getElementById(i.toString()).appendChild(values);
     }
   }
