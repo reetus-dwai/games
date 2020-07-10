@@ -3,6 +3,13 @@ var playerY = 0;
 
 var sizeX;
 var sizeY;
+
+var types = {
+  0 : 'empty',
+  1 : 'player',
+  2 : 'wall'
+};
+
 function writeField(x, y){
   let arr = [];
   sizeX = x;
@@ -26,18 +33,46 @@ function drawField(field, target, newId){
   document.getElementById(target).appendChild(table);
   
   
-  for(var i = 0; i <= field.length; i++){
+  for(var i = 0; i < field.length; i++){
     let rows = document.createElement('tr');
     rows.id = 'row' + i.toString();
     document.getElementById(newId).appendChild(rows);
     
-    for(var k = 0; k <= field[0].length; k++){
+    for(var k = 0; k < field[0].length; k++){
       let values = document.createElement('td');
       values.id = i.toString() + ' ' + k.toString();
       values.style.border = '1px solid black';
       document.getElementById('row' + i.toString()).appendChild(values);
     }
   }
+}
+function legalizeMove(){
+  //check walls
+  if(playerX > sizeX){
+    playerX = sizeX;
+  }
+  if(playerX < 0){
+    playerX = 0;
+  }
+  if(playerY > sizeY){
+    playerY = sizeY;
+  }
+  if(playerY < 0){
+    playerY = 0;
+  }
+  
+  //clear player from field
+  for(var i = 0; i < sizeX; i++){
+    for(var j = 0; j < sizeY; j++){
+      if(field[playerX][playerY] = 1){
+        field[playerX][playerY] = 0;
+      }
+    }
+  }
+  
+  //stick player into field
+  field[playerX][playerY] = 1;
+  console.log(field);
 }
 function recolorSquares(){
   //clear all squares
@@ -64,18 +99,7 @@ function keyBind (event){
     playerX++;
   }
   
-  if(playerX > sizeX){
-    playerX = sizeX;
-  }
-  if(playerX < 0){
-    playerX = 0;
-  }
-  if(playerY > sizeY){
-    playerY = sizeY;
-  }
-  if(playerY < 0){
-    playerY = 0;
-  }
+  legalizeMove();
   console.log(playerX + ', ' + playerY);
   //console.log(event.key);
   recolorSquares();
