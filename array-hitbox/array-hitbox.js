@@ -76,8 +76,8 @@ function legalizeMove(){
 }
 function recolorSquares(){
   //clear all squares
-  for(var i = 0; i < sizeX + 1; i++){
-    for(var j = 0; j < sizeY + 1; j++){
+  for(var i = 0; i < sizeX; i++){
+    for(var j = 0; j < sizeY; j++){
       document.getElementById(i + ' ' + j).style.background = '#ffffff';
     }
   }
