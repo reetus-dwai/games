@@ -28,7 +28,7 @@ function drawField(field, target, newId){
       let values = document.createElement('td');
       values.id = k.toString();
       values.style.border = '1px solid black';
-      document.getElementById(i.toString()).appendChild(values);
+      document.getElementById('row' + i.toString()).appendChild(values);
     }
   }
 }
