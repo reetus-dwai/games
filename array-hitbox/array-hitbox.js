@@ -71,7 +71,7 @@ function legalizeMove(){
   }
   
   //stick player into field
-  field[playerX][playerY] = 1;
+  field[playerY][playerX] = 1;
   console.log(field);
 }
 function recolorSquares(){
