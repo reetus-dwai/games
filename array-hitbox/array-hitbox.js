@@ -48,14 +48,14 @@ function drawField(field, target, newId){
 }
 function legalizeMove(){
   //check walls
-  if(playerX > sizeX){
-    playerX = sizeX;
+  if(playerY > sizeX){
+    playerY = sizeX;
   }
   if(playerX < 0){
     playerX = 0;
   }
-  if(playerY > sizeY){
-    playerY = sizeY;
+  if(playerX > sizeY){
+    playerX = sizeY;
   }
   if(playerY < 0){
     playerY = 0;
