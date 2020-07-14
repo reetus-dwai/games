@@ -1,4 +1,3 @@
-"use strict";
 var playerX = 0;
 var playerY = 0;
 
@@ -49,13 +48,13 @@ function drawField(field, target, newId){
 }
 function legalizeMove(){
   //check walls
-  if(playerY > sizeX - 1){
+  if(playerY > sizeX - 2){
     playerY = sizeX;
   }
   if(playerX < 0){
     playerX = 0;
   }
-  if(playerX > sizeY - 1){
+  if(playerX > sizeY - 2){
     playerX = sizeY;
   }
   if(playerY < 0){
