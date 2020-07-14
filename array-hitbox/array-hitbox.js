@@ -1,3 +1,4 @@
+"use strict";
 var playerX = 0;
 var playerY = 0;
 
