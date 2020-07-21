@@ -1,3 +1,4 @@
 # platformer-shooter
 
-should I use SVG, canvas, or something else
+using matter.js for physics
+same engine as n-gon
